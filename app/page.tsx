@@ -219,11 +219,6 @@ export default function EmailSignatureGenerator() {
           </button>
         </div>
       </div>
-      <div className="mt-10 text-gray-500 text-xs text-center max-w-xl">
-        <span className="font-semibold text-indigo-700">Tip:</span> Download the
-        HTML and embed it in your Outlook signature settings. The background
-        image is for demonstration; you can change it in the code.
-      </div>
     </div>
   );
 }
