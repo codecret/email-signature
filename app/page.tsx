@@ -105,7 +105,6 @@ export default function EmailSignatureGenerator() {
       </h1>
       <p className="mb-8 text-gray-700 text-center max-w-xl text-base">
         Fill in your details below to generate a professional email signature.
-        Download the HTML and embed it in your Outlook signature settings.
       </p>
       <div className="flex flex-col md:flex-row gap-10 w-full max-w-4xl">
         {/* Form */}
