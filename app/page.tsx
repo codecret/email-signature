@@ -182,13 +182,6 @@ export default function EmailSignatureGenerator() {
               type="email"
             />
           </div>
-          <button
-            type="button"
-            className="mt-2 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg px-5 py-2.5 font-semibold text-lg shadow hover:from-indigo-700 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
-            onClick={handleDownload}
-          >
-            Download HTML
-          </button>
         </form>
         {/* Preview */}
         <div className="flex-1 flex flex-col items-center">
@@ -196,6 +189,7 @@ export default function EmailSignatureGenerator() {
             Signature Preview
           </div>
           <div
+            suppressHydrationWarning
             ref={previewRef}
             dangerouslySetInnerHTML={{ __html: signatureHtml }}
             style={{
