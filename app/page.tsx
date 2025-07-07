@@ -44,7 +44,7 @@ export default function EmailSignatureGenerator() {
           <div style='font-size:0.76em;font-weight:400;font-family:Arial, sans-serif;text-align:left; position:absolute;top:54%;left:47%;'><a href='mailto:${
             form.email
           }' style='color:#fff;'>${form.email || "[Email]"}</a></div>
-        <div style='position:absolute;top:62.5%;left:11%; font-size:0.76em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'><a href='https://zainme.com' style='color:#fff;'>www.zainme.com</a></div>
+        <div style='position:absolute;top:62.5%;left:11%; font-size:0.76em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'><a href='https://zainme.com' style='color:#fff;'>www.zainme.net</a></div>
         <div style='position:absolute;top:62.5%;left:47%; font-size:0.76em;color:#fff;font-weight:400;font-family:Arial, sans-serif;text-align:left;'>
           <span>2304, C88 Tower <br/> Electra Street, Abu Dhabi</span>
         </div>
