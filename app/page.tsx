@@ -118,7 +118,7 @@ export default function EmailSignatureGenerator() {
               Full Name <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:text-gray-600 outline-none text-base placeholder:text-gray-600"
               name="name"
               id="name"
               placeholder="e.g. Mohamad"
@@ -135,7 +135,7 @@ export default function EmailSignatureGenerator() {
               Department <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:text-gray-600 outline-none text-base placeholder:text-gray-600"
               name="department"
               id="department"
               placeholder="e.g. Marketing"
@@ -152,7 +152,7 @@ export default function EmailSignatureGenerator() {
               Mobile Number <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:text-gray-600 outline-none text-base placeholder:text-gray-600"
               name="mobile"
               id="mobile"
               placeholder="e.g. +971 50 123 4567"
@@ -169,7 +169,7 @@ export default function EmailSignatureGenerator() {
               Email <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:text-gray-600 outline-none text-base placeholder:text-gray-600"
               name="email"
               id="email"
               placeholder="e.g. john@zainme.com"
