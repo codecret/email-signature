@@ -32,7 +32,7 @@ export default function EmailSignatureGenerator() {
             form.name || "Mohamad"
           }</div>
           <div style='color:#c5e1a5; font-size:0.76em; margin-bottom:2px;font-weight:400;font-family:Arial, sans-serif;'>${
-            form.department || "Marketing"
+            form.department || "IT"
           }</div>
           <div style='font-size:0.76em; color:#fff;font-weight:400;font-family:Arial, sans-serif;'>Zain Middle East Properties LLC</div>
         </div>
@@ -44,7 +44,7 @@ export default function EmailSignatureGenerator() {
           <div style='font-size:0.76em;font-weight:400;font-family:Arial, sans-serif;text-align:left; position:absolute;top:54%;left:47%;'><a href='mailto:${
             form.email
           }' style='color:#fff;'>${form.email || "[Email]"}</a></div>
-        <div style='position:absolute;top:62.5%;left:11%; font-size:0.76em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'><a href='https://zainme.com' style='color:#fff;'>www.zainme.net</a></div>
+        <div style='position:absolute;top:62.5%;left:11%; font-size:0.76em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'><a href='https://zainme.net' style='color:#fff;'>www.zainme.net</a></div>
         <div style='position:absolute;top:62.5%;left:47%; font-size:0.76em;color:#fff;font-weight:400;font-family:Arial, sans-serif;text-align:left;'>
           <span>2304, C88 Tower <br/> Electra Street, Abu Dhabi</span>
         </div>
@@ -172,7 +172,7 @@ export default function EmailSignatureGenerator() {
               className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:text-gray-600 outline-none text-base placeholder:text-gray-600"
               name="email"
               id="email"
-              placeholder="e.g. john@zainme.com"
+              placeholder="e.g. mohamad@zainme.net"
               value={form.email}
               onChange={handleChange}
               required
