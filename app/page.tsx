@@ -113,12 +113,12 @@ export default function EmailSignatureGenerator() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-semibold text-gray-800 mb-1"
+              className="block text-sm font-semibold text-gray-900 mb-1"
             >
-              Full Name *
+              Full Name <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-400"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
               name="name"
               id="name"
               placeholder="e.g. Mohamad"
@@ -132,10 +132,10 @@ export default function EmailSignatureGenerator() {
               htmlFor="department"
               className="block text-sm font-semibold text-gray-800 mb-1"
             >
-              Department *
+              Department <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-400"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
               name="department"
               id="department"
               placeholder="e.g. Marketing"
@@ -149,10 +149,10 @@ export default function EmailSignatureGenerator() {
               htmlFor="mobile"
               className="block text-sm font-semibold text-gray-800 mb-1"
             >
-              Mobile Number *
+              Mobile Number <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-400"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
               name="mobile"
               id="mobile"
               placeholder="e.g. +971 50 123 4567"
@@ -166,10 +166,10 @@ export default function EmailSignatureGenerator() {
               htmlFor="email"
               className="block text-sm font-semibold text-gray-800 mb-1"
             >
-              Email *
+              Email <span className="text-red-500">*</span>
             </label>
             <input
-              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-400"
+              className="border border-gray-300 p-2 rounded w-full focus:ring-2 focus:ring-indigo-300 outline-none text-base placeholder:text-gray-600"
               name="email"
               id="email"
               placeholder="e.g. john@zainme.com"
