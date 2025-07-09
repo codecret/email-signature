@@ -24,7 +24,7 @@ export default function EmailSignatureGenerator() {
   const CARD_HEIGHT = 218;
   const signatureHtml = `
     <div style="position:relative;width:${CARD_WIDTH}px;height:${CARD_HEIGHT}px;background:url('/email-sign.jpg') no-repeat center/cover; color:#fff; font-family:Arial, sans-serif; overflow:hidden;">
-      <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(17,17,17,0.10);'></div>
+      <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:transparent;'></div>
       <div style='position:absolute;top:6%;left:45%;width:54%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:24px 32px 24px 24px;z-index:2;font-family:Arial, sans-serif;'>
 
         <div style="position:absolute;top:0%;left:0%;display:flex;flex-direction:column;justify-content:center;padding:24px 32px 24px 24px;z-index:2;font-family:Arial, sans-serif;">
@@ -86,9 +86,7 @@ export default function EmailSignatureGenerator() {
 
   const handleDownloadImage = async () => {
     if (previewRef.current) {
-      const dataUrl = await htmlToImage.toPng(previewRef.current, {
-        backgroundColor: "#111",
-      });
+      const dataUrl = await htmlToImage.toPng(previewRef.current);
       const link = document.createElement("a");
       link.href = dataUrl;
       link.download = `email-signature-${form.name || "employee"}.png`;
