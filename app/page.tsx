@@ -20,8 +20,8 @@ export default function EmailSignatureGenerator() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const CARD_WIDTH = 600;
-  const CARD_HEIGHT = 218;
+  const CARD_WIDTH = 450; // was 600
+  const CARD_HEIGHT = 164; // was 218
   const signatureHtml = `
     <div style="position:relative;width:${CARD_WIDTH}px;height:${CARD_HEIGHT}px;background:url('/email-sign.jpg') no-repeat center/cover; color:#fff; font-family:Arial, sans-serif; overflow:hidden;">
       <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:transparent;'></div>
