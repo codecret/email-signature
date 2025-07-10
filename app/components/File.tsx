@@ -13,6 +13,7 @@ export default function EmailSignatureGenerator() {
   const [form, setForm] = useState(defaultValues);
   const previewRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,7 +24,7 @@ export default function EmailSignatureGenerator() {
   const CARD_WIDTH = 500;
   const CARD_HEIGHT = 182;
   const EXPORT_WIDTH = 500;
-  const EXPORT_HEIGHT = Math.round((EXPORT_WIDTH * CARD_HEIGHT) / CARD_WIDTH);
+  const EXPORT_HEIGHT = 182;
   const signatureHtml = `
     <div style="position:relative;width:${CARD_WIDTH}px;height:${CARD_HEIGHT}px;background:url('/email-sign.jpg') no-repeat center/cover; color:#fff; font-family:Arial, sans-serif; overflow:hidden;">
       <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(17,17,17,0.10);'></div>
@@ -56,17 +57,24 @@ export default function EmailSignatureGenerator() {
 
   const handleDownloadImage = async () => {
     if (previewRef.current) {
-      const dataUrl = await htmlToImage.toPng(previewRef.current, {
-        backgroundColor: "transparent",
-        width: EXPORT_WIDTH,
-        height: EXPORT_HEIGHT,
-      });
-      const link = document.createElement("a");
-      link.href = dataUrl;
-      link.download = `email-signature-${form.name || "employee"}.png`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      setIsLoading(true);
+      try {
+        const dataUrl = await htmlToImage.toPng(previewRef.current, {
+          backgroundColor: "transparent",
+          width: EXPORT_WIDTH,
+          height: EXPORT_HEIGHT,
+        });
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = `email-signature-${form.name || "employee"}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (error) {
+        console.error("Error generating image:", error);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
