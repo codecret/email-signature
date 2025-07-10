@@ -38,7 +38,7 @@ export default function RootLayout({
           property="og:description"
           content="Generate a professional email signature for Zain Middle East Properties LLC employees."
         />
-        <meta property="og:image" content="/email-sign.jpg" />
+        <meta property="og:image" content="/background.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://zainme.net" />
         {/* Twitter Meta Tags */}
@@ -48,10 +48,11 @@ export default function RootLayout({
           name="twitter:description"
           content="Generate a professional email signature for Zain Middle East Properties LLC employees."
         />
-        <meta name="twitter:image" content="/email-sign.jpg" />
+        <meta name="twitter:image" content="/background.jpg" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         {children}
       </body>

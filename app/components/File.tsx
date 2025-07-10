@@ -21,34 +21,65 @@ export default function EmailSignatureGenerator() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const CARD_WIDTH = 500;
-  const CARD_HEIGHT = 182;
-  const EXPORT_WIDTH = 500;
-  const EXPORT_HEIGHT = 182;
+  const EXPORT_WIDTH = 1000;
+  const EXPORT_HEIGHT = 364;
+  const PREVIEW_WIDTH = 500;
+  const PREVIEW_HEIGHT = 200;
+
   const signatureHtml = `
-    <div style="position:relative;width:${CARD_WIDTH}px;height:${CARD_HEIGHT}px;background:url('/email-sign.jpg') no-repeat center/cover; color:#fff; font-family:Arial, sans-serif; overflow:hidden;">
+   <div style="position:relative;width:${PREVIEW_WIDTH}px;height:${PREVIEW_HEIGHT}px;background:url('/email-sign.jpg') no-repeat center/cover; color:#fff; font-family:Arial, sans-serif; overflow:hidden;">
       <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(17,17,17,0.10);'></div>
       <div style='position:absolute;top:6%;left:45%;width:54%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:24px 32px 24px 24px;z-index:2;font-family:Arial, sans-serif;'>
 
-        <div style="position:absolute;top:0%;left:0%;display:flex;flex-direction:column;justify-content:center;padding:24px 32px 24px 14px;z-index:2;font-family:Arial, sans-serif;">
-          <div style='font-size:1.2em;font-weight:600; color:#fff;font-family:Arial, sans-serif;'>${
+        <div style="position:absolute;top:0%;left:0%; margin-top: 0.4rem; display:flex;flex-direction:column;justify-content:center;padding:24px 32px 24px 14px;z-index:2;font-family:Arial, sans-serif;">
+          <div style='font-size:1.08em;font-weight:600; color:#fff;font-family:Arial, sans-serif;'>${
             form.name || "Mohamad"
           }</div>
           <div style='color:#c5e1a5; font-size:0.70em; margin-bottom:2px;font-weight:400;font-family:Arial, sans-serif;'>${
             form.department || "Marketing"
           }</div>
-          <div style='font-size:0.76em; color:#fff;font-weight:400;font-family:Arial, sans-serif;'>Zain Middle East Properties LLC</div>
+          <div style='font-size:0.56em; color:#fff;font-weight:400;font-family:Arial, sans-serif;'>Zain Middle East Properties LLC</div>
         </div>
 
         <div style='display:flex;flex-direction:column;justify-content:center;padding:24px 32px 24px 4px;z-index:2;font-family:Arial, sans-serif;'>
           <div style='position:absolute;top:54.7%;left:11%; margin-bottom:4px; font-size:0.60em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'>${
             form.mobile || "[Mobile]"
           }</div>
-          <div style='font-size:0.60em;font-weight:400;font-family:Arial, sans-serif;text-align:left; position:absolute;top:54.8%;left:47%;'><a href='mailto:${
+          <div style='font-size:0.60em;font-weight:400;font-family:Arial, sans-serif;text-align:left; position:absolute;top:54%;left:50%;'><a href='mailto:${
             form.email
           }' style='color:#fff;'>${form.email || "[Email]"}</a></div>
         <div style='position:absolute;top:62.9%;left:11%; font-size:0.60em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'><a href='https://zainme.com' style='color:#fff;'>www.zainme.net</a></div>
-        <div style='position:absolute;top:63.6%;left:47%; font-size:0.60em;color:#fff;font-weight:400;font-family:Arial, sans-serif;text-align:left;'>
+        <div style='position:absolute;top:63.6%;left:50%; font-size:0.60em;color:#fff;font-weight:400;font-family:Arial, sans-serif;text-align:left;'>
+          <span>2304, C88 Tower <br/> Electra Street, Abu Dhabi</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const exportHtml = `
+    <div style="position:relative;width:${EXPORT_WIDTH}px;height:${EXPORT_HEIGHT}px;background:url('/background.jpg') no-repeat center/cover; color:#fff; font-family:Arial, sans-serif; overflow:hidden;">
+      <div style='position:absolute;top:0;left:0;width:100%;margin-top:0.4rem;height:100%;background:rgba(17,17,17,0.10);'></div>
+      <div style='position:absolute;top:6%;margin-top:0.4rem;left:45%;width:54%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:24px 32px 24px 24px;z-index:2;font-family:Arial, sans-serif;'>
+
+        <div style="position:absolute;top:0%;left:0%;margin-top:2rem;display:flex;flex-direction:column;justify-content:center;padding:24px 32px 0px 29px;z-index:2;font-family:Arial, sans-serif;">
+          <div style='font-size:2em;font-weight:600; color:#fff;font-family:Arial, sans-serif; margin-bottom:-10px'>${
+            form.name || "Mohamad"
+          }</div>
+          <div style='color:#c5e1a5; font-size:1.2em; margin-top:8px; font-weight:400;font-family:Arial, sans-serif;'>${
+            form.department || "Marketing"
+          }</div>
+          <div style='font-size:1.2em; color:#fff;font-weight:400;font-family:Arial, sans-serif;'>Zain Middle East Properties LLC</div>
+        </div>
+
+        <div style='display:flex;flex-direction:column;justify-content:center;padding:4px 32px 24px 4px;z-index:2;font-family:Arial, sans-serif; margin-top:10px;'>
+          <div style='position:absolute;top:53.3%;left:11%; margin-bottom:0px; font-size:1em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'>${
+            form.mobile || "[Mobile]"
+          }</div>
+          <div style='font-size:1em;font-weight:400;font-family:Arial, sans-serif;text-align:left; position:absolute;top:53.5%;left:47%;'><a href='mailto:${
+            form.email
+          }' style='color:#fff;'>${form.email || "[Email]"}</a></div>
+        <div style='position:absolute;top:62%;left:11%; font-size:1em;font-weight:400;font-family:Arial, sans-serif;text-align:left;'><a href='https://zainme.com' style='color:#fff;'>www.zainme.net</a></div>
+        <div style='position:absolute;top:62%;left:47%; font-size:1em;color:#fff;font-weight:400;font-family:Arial, sans-serif;text-align:left;'>
           <span>2304, C88 Tower <br/> Electra Street, Abu Dhabi</span>
         </div>
       </div>
@@ -57,7 +88,14 @@ export default function EmailSignatureGenerator() {
 
   const handleDownloadImage = async () => {
     if (previewRef.current) {
-      setIsLoading(true);
+      // Save original content
+      const originalContent = previewRef.current.innerHTML;
+      // Set to export content
+      previewRef.current.innerHTML = exportHtml;
+      // Save original size
+      const originalWidth = previewRef.current.style.width;
+      const originalHeight = previewRef.current.style.height;
+
       try {
         const dataUrl = await htmlToImage.toPng(previewRef.current, {
           backgroundColor: "transparent",
@@ -73,7 +111,10 @@ export default function EmailSignatureGenerator() {
       } catch (error) {
         console.error("Error generating image:", error);
       } finally {
-        setIsLoading(false);
+        // Restore original content and size
+        previewRef.current.innerHTML = originalContent;
+        previewRef.current.style.width = originalWidth;
+        previewRef.current.style.height = originalHeight;
       }
     }
   };
@@ -172,9 +213,9 @@ export default function EmailSignatureGenerator() {
             ref={previewRef}
             dangerouslySetInnerHTML={{ __html: signatureHtml }}
             style={{
-              width: CARD_WIDTH,
-              height: CARD_HEIGHT,
-              background: "#111",
+              width: PREVIEW_WIDTH,
+              height: PREVIEW_HEIGHT,
+              background: "transparent",
               borderRadius: 14,
               boxShadow: "0 2px 12px #0002",
               border: "1px solid #222",
