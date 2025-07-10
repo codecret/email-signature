@@ -24,6 +24,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Email Signature Generator</title>
+        <meta
+          name="description"
+          content="Generate a professional email signature for Zain Middle East Properties LLC employees."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Email Signature Generator" />
+        <meta
+          property="og:description"
+          content="Generate a professional email signature for Zain Middle East Properties LLC employees."
+        />
+        <meta property="og:image" content="/email-sign.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://zainme.net" />
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Email Signature Generator" />
+        <meta
+          name="twitter:description"
+          content="Generate a professional email signature for Zain Middle East Properties LLC employees."
+        />
+        <meta name="twitter:image" content="/email-sign.jpg" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
